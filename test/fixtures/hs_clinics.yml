@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hs_account_id: 1
+  name: MyString
+  address: MyString
+  country: MyString
+  hs_state_id: 1
+  township: MyString
+  phone: MyString
+  email: MyString
+  lat: 1.5
+  lng: 1.5
+
+two:
+  hs_account_id: 1
+  name: MyString
+  address: MyString
+  country: MyString
+  hs_state_id: 1
+  township: MyString
+  phone: MyString
+  email: MyString
+  lat: 1.5
+  lng: 1.5

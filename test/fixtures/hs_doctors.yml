@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hs_account_id: 1
+  names: MyString
+  last_names: MyString
+  rut: MyString
+  specialty: MyString
+  has_avatar: 1
+
+two:
+  hs_account_id: 1
+  names: MyString
+  last_names: MyString
+  rut: MyString
+  specialty: MyString
+  has_avatar: 1

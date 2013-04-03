@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hs_agenda_id: 1
+  hs_user_id: 1
+  hs_day_id: 1
+  hs_hour_id: 1
+  status: 1
+
+two:
+  hs_agenda_id: 1
+  hs_user_id: 1
+  hs_day_id: 1
+  hs_hour_id: 1
+  status: 1

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hs_doctor_id: 1
+  hs_user_id: 1
+  symptom: MyString
+  treatment: MyString
+  indication: MyString
+  comment: MyString
+
+two:
+  hs_doctor_id: 1
+  hs_user_id: 1
+  symptom: MyString
+  treatment: MyString
+  indication: MyString
+  comment: MyString

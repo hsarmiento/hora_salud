@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hs_doctor_id: 1
+  day: MyString
+  start_time: 2013-04-03 15:19:41
+  end_time: 2013-04-03 15:19:41
+
+two:
+  hs_doctor_id: 1
+  day: MyString
+  start_time: 2013-04-03 15:19:41
+  end_time: 2013-04-03 15:19:41
