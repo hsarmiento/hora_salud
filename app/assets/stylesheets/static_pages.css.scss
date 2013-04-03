@@ -1,0 +1,55 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.body-home {
+  height: 100%;
+  padding-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  /*width: 1600px;*/
+  background-image:url('doctors.jpg');
+  background-repeat:repeat-x;
+  background-size: 1366px 768px;
+  background-color: transparent;
+  background-repeat:repeat-y;
+}
+
+.effect-opacity{
+	opacity: 0.9;
+	border:1px solid gray;
+	background-color:#ffffff;
+	margin-top: -30px;
+	p{
+		margin-top: 10px;
+		text-align: center;
+	}
+	.dl-horizontal{
+		font-size: 16px;
+	}
+}
+
+.input-search{
+	margin: 10px 0 40px 150px;
+}
+
+.static-size{
+	height: 200px;	
+}
+
+
+.doctor-search{
+	.search-query{	
+		width: 400px;
+		padding-top: 10px;
+		font-size: 15px;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJ5JREFUeNpi+P//PwMQMANxERCfAeI/UBrEZwbJQ9WAFR0A4u1AbAnEbFB6O1ScGaawGoi3wHQiYyBYDZKHKbwHxLo4FOqC5GEKf4Ksw6EQ5IyfIDYTkPEUiNUZsAOQ+F9GRkYJEKcFiDficSOIcRjE4QTiY0C8DuRbqAJLKP8/FP9kQArHUiA+jySJjA8w4LAS5KZd0MAHhaccQIABALsMiBZy4YLtAAAAAElFTkSuQmCC);
+	    background-repeat: no-repeat;
+	    background-position: 12px 8px;
+	    padding-left: 30px;
+		}
+	.btn-large{
+		padding-top: 8px;
+	}
+}
