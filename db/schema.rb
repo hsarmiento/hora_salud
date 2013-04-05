@@ -11,15 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130404194132) do
+ActiveRecord::Schema.define(:version => 20130405185343) do
 
   create_table "hs_accounts", :force => true do |t|
     t.string   "email"
-    t.string   "password"
+    t.string   "password_digest"
     t.integer  "account_type"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "remember_token"
   end
+
+  add_index "hs_accounts", ["email"], :name => "index_hs_accounts_on_email", :unique => true
+  add_index "hs_accounts", ["remember_token"], :name => "index_hs_accounts_on_remember_token"
 
   create_table "hs_agendas", :force => true do |t|
     t.integer  "hs_doctor_id"
