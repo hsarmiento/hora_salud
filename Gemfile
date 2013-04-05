@@ -11,6 +11,8 @@ gem 'bootstrap-sass', '~> 2.2.2.0'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate'
 gem 'bcrypt-ruby', '3.0.1'
+#agrega gema para poblar la base de datos con usuarios falsos (dumies)
+gem 'faker', '1.0.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
