@@ -1,12 +1,16 @@
 HoraSalud::Application.routes.draw do
   resources :hs_accounts
   resources :hs_sessions, only: [:new, :create, :destory]
+  resources :hs_doctors
 
   root to: 'static_pages#home'
   match '/', to: 'static_pages#home'  
-
+  
   match '/signin', to: 'hs_sessions#new'
   match '/signout', to: 'hs_sessions#destroy', via: :delete
+
+  match '/search', to: 'hs_doctors#search'
+
 
 
   # The priority is based upon order of creation:

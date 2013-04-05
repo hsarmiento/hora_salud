@@ -1,0 +1,33 @@
+<div class="doctor-search">
+	<%= form_tag({controller: :hs_doctors, action: 'search', method: 'get'}) do %>
+		  <div class="form-horizontal">
+		      <%= text_field_tag :search, params[:search], class: 'search-query span3', placeholder: 'buscar doctor o especialidad médica' %>
+		     
+			<select name="state" id="state">
+				<% @states.each do |state| %>
+					<option value="<%=state.id%>"><%=state.name%></option>
+				<% end %>
+			</select>
+			<input type="hidden" id="hidden_township" name="township" value="">
+			<a href="#" id="add_township">agregar comuna?</a>
+			<select name="township" id="township" disabled style="display:none">		
+				<% @townships.each do |township| %>	
+					<option value="<%=township.name%>" class="<%=township.hs_state_id%>"><%=township.name.downcase.camelize%></option>
+				<% end %>		 
+			</select>		 
+	      </div>
+	      <div class="center">
+	      	<%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-large" %> 
+  		  </div>
+  <% end %> 
+</div>
+
+<script type="text/javascript">
+	$("#add_township").click(function(){
+		dynamicSelect("state", "township");
+		$("#hidden_township").attr("disabled", "disabled");
+		$(this).fadeOut('fast',function(){
+			$("#township").removeAttr("disabled").fadeIn('100')
+		});		
+	});
+</script>

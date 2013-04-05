@@ -5,7 +5,7 @@
 
 .body-home {
   height: 100%;
-  padding-top: 100px;
+  padding-top: 40px;
   margin-left: auto;
   margin-right: auto;
   /*width: 1600px;*/
@@ -30,7 +30,7 @@
 	opacity: 0.9;
 	border:1px solid gray;
 	background-color:#ffffff;
-	margin-top: -30px;
+	/*margin-top: -30px;*/
 	p{
 		margin-top: 10px;
 		text-align: center;
@@ -40,18 +40,26 @@
 	}
 }
 
-.input-search{
-	margin: 10px 0 40px 150px;
-}
+
 
 .static-size{
-	height: 200px;	
+	height: 400px;	
 }
 
 
 .doctor-search{
+	margin-top: 30px;
+	margin-left: 10px;
+	/*border-color: red;
+	border-style: solid;*/
+	input,select{
+		margin-right: 20px;
+	}
+	input[type="submit"]{
+		margin-top: 30px;
+	}
 	.search-query{	
-		width: 400px;
+		width: 250px;
 		padding-top: 10px;
 		font-size: 15px;
 		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJ5JREFUeNpi+P//PwMQMANxERCfAeI/UBrEZwbJQ9WAFR0A4u1AbAnEbFB6O1ScGaawGoi3wHQiYyBYDZKHKbwHxLo4FOqC5GEKf4Ksw6EQ5IyfIDYTkPEUiNUZsAOQ+F9GRkYJEKcFiDficSOIcRjE4QTiY0C8DuRbqAJLKP8/FP9kQArHUiA+jySJjA8w4LAS5KZd0MAHhaccQIABALsMiBZy4YLtAAAAAElFTkSuQmCC);
@@ -61,5 +69,11 @@
 		}
 	.btn-large{
 		padding-top: 8px;
+	}
+	.township-div{
+		display:none;
+	}
+	#add_township{
+		font-size: 16px;
 	}
 }
