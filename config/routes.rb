@@ -2,7 +2,7 @@ HoraSalud::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destory]
 
   match '/signin', to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy' via: :delete
+  match '/signout', to: 'sessions#destroy', via: :delete
 
 
 
