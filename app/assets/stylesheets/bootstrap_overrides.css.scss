@@ -8,7 +8,7 @@ html {
 
 body {
   height: 80%;
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 
@@ -28,6 +28,9 @@ textarea {
   margin-bottom: 10px;
 }
 
+.container-body{
+  margin-top: -20px;
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -74,4 +77,57 @@ select:focus {
   outline: thin dotted \9;
   /* IE6-9 */
 
+}
+
+/* footer */
+
+footer {
+  width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin: 0 200px 0 200px;*/
+  /*border-color: red;
+  border-style: solid;*/
+  /*margin-top: 10px;*/
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  strong{
+    color: #555;
+  }
+  a {
+    color: #555;
+    &:hover { 
+      color: #222;
+    }
+  }  
+  .ul-left{
+    margin: 0 0 0 200px;
+    padding: 0;
+    float: left;
+    list-style-type: none;
+    li {
+      margin-right: 10px;
+      margin-left: 10px;
+      display: inline;
+    }
+  }
+  .ul-right {
+    margin: 0 200px 0 0;
+    padding: 0;
+    float: right;
+    list-style-type: none;
+    li {
+      margin-right: 10px;
+      margin-left: 10px;
+      display: inline;
+    }
+  }
+}
+
+/* PAGINACION */
+
+.pagination{
+  text-align: center;
+  margin-top: 40px;
 }
