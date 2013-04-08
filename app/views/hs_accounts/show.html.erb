@@ -1,1 +1,4 @@
-<%= @hs_account.email %>, <%= @hs_account.account_type %>
+<h1> <%= @hs_account.email %> </h1>
+<% if @hs_account.account_type == 0 %>
+	<b>Administrador</b>
+<% end %>

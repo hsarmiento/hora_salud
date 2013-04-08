@@ -17,6 +17,10 @@ module HsSessionsHelper
 		@current_user ||= HsAccount.find_by_remember_token(cookies[:remember_token])		
 	end
 
+	def current_user?(hs_account)
+		hs_account == current_user
+	end
+
 	def sign_out
 		self.current_user = nil
 		cookies.delete(:remember_token)		
