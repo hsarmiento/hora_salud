@@ -12,5 +12,5 @@
 #
 
 class HsBlog < ActiveRecord::Base
-  attr_accessible :abstract, :tags, :text, :title
+  attr_accessible :abstract, :tags, :text, :title, :has_avatar
 end

@@ -1,0 +1,2 @@
+module HsBlogsHelper
+end

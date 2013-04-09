@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130405185343) do
+ActiveRecord::Schema.define(:version => 20130409144733) do
 
   create_table "hs_accounts", :force => true do |t|
     t.string   "email"
@@ -36,11 +36,12 @@ ActiveRecord::Schema.define(:version => 20130405185343) do
 
   create_table "hs_blogs", :force => true do |t|
     t.string   "title"
-    t.string   "text"
-    t.string   "abstract"
+    t.text     "text"
+    t.text     "abstract"
     t.string   "tags"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "has_avatar"
   end
 
   create_table "hs_bookings", :force => true do |t|
