@@ -1,5 +1,5 @@
 class HsAccountsController < ApplicationController
-	before_filter :signed_in_user, only: [:edit, :update]
+	before_filter :signed_in_user, only: [:show, :edit, :update]
 	before_filter :correct_user, only: [:edit, :update]
 
 	def show
@@ -22,7 +22,10 @@ class HsAccountsController < ApplicationController
 	private
 
 		def signed_in_user
-			redirect_to signin_url, notice: "Por favor identifiquese" unless signed_in?
+			unless signed_in?
+				redirect_to signin_url, notice: "Por favor identifiquese"
+				store_location
+			end			
 		end
 
 		def correct_user
