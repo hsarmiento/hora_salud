@@ -21,13 +21,6 @@ class HsAccountsController < ApplicationController
 
 	private
 
-		def signed_in_user
-			unless signed_in?
-				redirect_to signin_url, notice: "Por favor identifiquese"
-				store_location
-			end			
-		end
-
 		def correct_user
 			@hs_account = HsAccount.find(params[:id])
 			redirect_to(root_path) unless current_user?(@hs_account)
