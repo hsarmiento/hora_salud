@@ -1,0 +1,22 @@
+<% provide(:title, 'Clinica') %>
+<h2> Clinica: <%= @hs_clinic.name %> </h2>
+
+<div class="clinic">
+	<ul>
+		<li><b> Direccion: </b> <%= @hs_clinic.address %> </li>
+		<li><b> Pais: </b> <%= @hs_clinic.country %> </li>
+		<li><b> Region: </b> <%= @hs_clinic.hs_state_id %> </li>
+		<li><b> Comuna: </b> <%= @hs_clinic.township %> </li>
+		<li><b> Telefono: </b> <%= @hs_clinic.phone %> </li>
+		<li><b> Correo electronico: </b> <%= @hs_clinic.email %> </li>
+		<li><b> Latitud: </b> <%= @hs_clinic.lat %> </li>
+		<li><b> Longitud: </b> <%= @hs_clinic.lng %> </li>		
+	</ul>
+</div>
+
+<div class="row">
+	<div class="span6 offset3">		
+		<b><%= link_to "Editar", edit_hs_clinic_path(@hs_clinic) %></b> |
+		<b><%= link_to "Eliminar", @hs_clinic, method: :delete, data: { confirm: "Esta seguro?" } %></b>
+	</div>
+</div>

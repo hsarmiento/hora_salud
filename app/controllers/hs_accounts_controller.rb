@@ -13,9 +13,9 @@ class HsAccountsController < ApplicationController
 		if @hs_account.update_attributes(params[:hs_account])
 			flash[:success] = "Perfil actualizado"
 			sign_in @hs_account
-			redirect_to @hs_account			
+			redirect_to @hs_account
 		else
-			render 'edit'			
+			render 'edit'
 		end
 	end
 

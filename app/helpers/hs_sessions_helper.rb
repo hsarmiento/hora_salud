@@ -41,4 +41,8 @@ module HsSessionsHelper
 			store_location
 		end
 	end
+
+	def admin_user
+		redirect_to(root_path) unless current_user.account_type == 0
+	end
 end
