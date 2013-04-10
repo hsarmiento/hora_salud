@@ -18,10 +18,15 @@
 #
 
 class HsClinic < ActiveRecord::Base
+
   attr_accessible :address, :country, :email, :hs_account_id, :hs_state_id, :lat, :lng, :name, :phone, :township
   has_many :hs_doctors
 
   before_save { |hs_clinic| hs_clinic.email = email.downcase }
+
+  #no mostrar el id en la url
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   #validaciones
   validates :name, presence: true, length: { minimum: 7}

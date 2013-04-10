@@ -13,7 +13,6 @@ HoraSalud::Application.routes.draw do
   match '/search', to: 'hs_doctors#search'
 
 
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

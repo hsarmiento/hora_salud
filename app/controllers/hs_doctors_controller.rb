@@ -11,4 +11,12 @@ class HsDoctorsController < ApplicationController
     	end
 	end
 
+	def index
+		@hs_doctors = HsDoctor.all		
+	end
+
+	def show
+		
+	end
+
 end
