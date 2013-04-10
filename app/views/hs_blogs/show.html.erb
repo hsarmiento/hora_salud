@@ -1,0 +1,20 @@
+<div class="body-blog">
+	<div class="container">
+		<h1><%=@entry.title%></h1>
+		<h5><%=@entry.created_at.strftime("%A %d %B %Y")%></h5>
+	</div>
+	<div class="container">
+		<div class="row" >
+			<% if @entry.has_avatar == 1 %>
+				<div class="span8 offset2">
+					<%= image_tag "blog/#{@entry.id}.png" %>
+				</div>
+			<% end %>
+			<div class="span8 offset2">
+				<%= @entry.text%>
+			</div>
+		</div>
+		</br>
+	</div>
+	</br>
+</div>

@@ -3,29 +3,27 @@
 		<h1>Blog de Hora Salud</h1>
 	</div>
 	<div class="container">
-		<ul>
 			<% @entries.each do |entry| %>
-				<div class="row" >
-					<div class="span11">
+				<div class="row">
+					<div class="span12">
 						<h2><%= link_to entry.title, blog_path(entry.id)%></h2>
 						<h5><%=entry.created_at.strftime("%A %d %B %Y")%></h5>
 					</div>
 					<% if entry.has_avatar == 1 %>
-						<div class="span7 offset2">
+						<div class="span8 offset2">
 							<%= image_tag "blog/#{entry.id}.png" %>
 						</div>
 					<% end %>
-					<div class="span7 offset2">
+					<div class="span8 offset2">
 						<%= entry.abstract%>
 					</div>
-					<div class="span2 offset7 ver-mas">
+					<div class="span2 offset8 ver-mas">
 						<%= link_to "seguir leyendo", blog_path(entry.id)%>
 					</div> 
 				</div>
 				<hr>
 			</br>
 			<% end %>
-		</ul>
 		<br/>
 	</div>
 </div>

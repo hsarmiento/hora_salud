@@ -4,5 +4,6 @@ class HsBlogsController < ApplicationController
 	end
 
 	def show
+		@entry = HsBlog.find(params[:id])
 	end
 end
