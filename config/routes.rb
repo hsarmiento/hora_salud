@@ -1,16 +1,14 @@
 HoraSalud::Application.routes.draw do
-  resources :hs_accounts
+  resources :admin, controller: "hs_accounts", as: "hs_accounts"
   resources :hs_sessions, only: [:new, :create, :destory]
   resources :hs_doctors
-  resources :hs_clinics
+  resources :clinics, controller: "hs_clinics", as: "hs_clinics"
 
   root to: 'static_pages#home'
   match '/', to: 'static_pages#home'  
   
   match '/signin', to: 'hs_sessions#new'
   match '/signout', to: 'hs_sessions#destroy', via: :delete
-
-  match '/admin/:id', to: 'hs_accounts#show'
 
   match '/search', to: 'hs_doctors#search'
 

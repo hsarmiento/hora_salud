@@ -10,8 +10,17 @@
                 Clinicas <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Mostrar", hs_clinics_path %></li>
-                <li><%= link_to "Agregar", new_hs_clinic_path %></li>
+                <li><%= link_to "Mostrar", clinics_path %></li>
+                <li><%= link_to "Agregar", new_clinic_path %></li>
+              </ul>
+            </li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Clinicas <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Mostrar", clinics_path %></li>
+                <li><%= link_to "Agregar", new_clinic_path %></li>
               </ul>
             </li>
             <li id="fat-menu" class="dropdown">
@@ -19,8 +28,8 @@
                 Cuenta <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Perfil", current_user %></li>
-                <li><%= link_to "Configuración", edit_hs_account_path(current_user) %></li>
+                <li><%= link_to "Perfil", admin_path(current_user) %></li>
+                <li><%= link_to "Configuración", edit_admin_path(current_user) %></li>
                 <li class="divider"></li>
                 <li>
                   <%= link_to "Salir", signout_path, method: "delete" %>
