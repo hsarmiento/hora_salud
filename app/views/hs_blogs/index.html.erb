@@ -6,17 +6,26 @@
 		<ul>
 			<% @entries.each do |entry| %>
 				<div class="row" >
-					<div class="span11" style="border-color:green;border-style:solid;text-align:center">dasdasdasdasds</div>
-					<div class="span7 offset2" style="border-color:green;border-style:solid">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat libero metus. Ut lacinia elit ligula. Mauris magna mi, semper vestibulum auctor ut, scelerisque ac lorem. Donec ut erat lorem. Mauris sit amet urna libero. Aliquam erat volutpat. Nullam eu arcu nibh. Suspendisse id massa vel dui vehicula imperdiet vel id augue. Curabitur vitae eros non diam rhoncus vehicula id sed urna. Aenean in nisl sed lacus egestas vehicula id ac odio. Nunc ac adipiscing diam.
+					<div class="span11">
+						<h2><%= link_to entry.title, blog_path(entry.id)%></h2>
+						<h5><%=entry.created_at.strftime("%A %d %B %Y")%></h5>
 					</div>
-					<div class="span7 offset2" style="border-color:green;border-style:solid">
-						Pellentesque velit ante, accumsan et placerat congue, mollis vitae nunc. Sed bibendum, enim in volutpat ornare, lacus purus sagittis dolor, vitae placerat lacus tellus vitae diam. Sed consectetur interdum ipsum eget volutpat. Sed ullamcorper adipiscing sollicitudin. Vivamus sodales aliquet felis nec aliquet. Fusce neque est, fermentum ut faucibus a, laoreet id est. Morbi elit sapien, porta at pharetra pellentesque, egestas a lorem. Proin vitae mi purus. Nunc sit amet rhoncus risus. Integer eu lacus nisi, nec vestibulum quam. Sed pulvinar scelerisque vestibulum. Aenean dictum lectus risus, sit amet vestibulum nisi. Nullam et consectetur orci.
-
-Aliquam ornare ligula id risus tincidunt egestas. Nam sit amet metus felis, a iaculis mauris. Nunc viverra, leo non sodales congue, est nisi convallis justo, sollicitudin tempus dui leo in enim. Nulla ac ullamcorper ante. Etiam cursus augue sed eros sollicitudin adipiscing. Fusce facilisis adipiscing lectus ac molestie. In placerat augue dui. Donec vehicula magna at quam sodales tincidunt. Integer ac tellus eu massa suscipit sollicitudin in sit amet nunc.
+					<% if entry.has_avatar == 1 %>
+						<div class="span7 offset2">
+							<%= image_tag "blog/#{entry.id}.png" %>
+						</div>
+					<% end %>
+					<div class="span7 offset2">
+						<%= entry.abstract%>
 					</div>
+					<div class="span2 offset7 ver-mas">
+						<%= link_to "seguir leyendo", blog_path(entry.id)%>
+					</div> 
 				</div>
+				<hr>
 			</br>
 			<% end %>
 		</ul>
+		<br/>
 	</div>
 </div>
