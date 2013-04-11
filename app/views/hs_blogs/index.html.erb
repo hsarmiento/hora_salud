@@ -6,7 +6,7 @@
 			<% @entries.each do |entry| %>
 				<div class="row">
 					<div class="span12">
-						<h2><%= link_to entry.title, blog_path(entry.id)%></h2>
+						<h2><%= link_to entry.title, blog_path(entry)%></h2>
 						<h5><%=entry.created_at.strftime("%A %d %B %Y")%></h5>
 					</div>
 					<% if entry.has_avatar == 1 %>
@@ -18,7 +18,7 @@
 						<%= entry.abstract%>
 					</div>
 					<div class="span2 offset8 ver-mas">
-						<%= link_to "seguir leyendo", blog_path(entry.id)%>
+						<%= link_to "seguir leyendo", blog_path(entry)%>
 					</div> 
 				</div>
 				<hr>
