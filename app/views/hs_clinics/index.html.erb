@@ -1,0 +1,10 @@
+<% provide(:title, 'Clinicas') %>
+<h1>Clinicas</h1>
+
+<ul class="clinics">
+	<% @hs_clinics.each do |clinic| %>
+		<li>
+			<b> <%= link_to clinic.name, clinic %> </b> | <%= link_to "Editar", edit_hs_clinic_path(clinic) %> | <%= link_to "Eliminar", clinic, method: :delete, data: { confirm: "Esta seguro?" } %>
+		</li>
+	<% end %>
+</ul>

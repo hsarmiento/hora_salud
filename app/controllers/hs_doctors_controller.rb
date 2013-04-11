@@ -1,6 +1,9 @@
 class HsDoctorsController < ApplicationController
 	respond_to :html
 
+	before_filter :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+	before_filter :admin_user, only: [:new, :create, :edit, :update, :destroy]
+
 	def search
 		@doctors = HsDoctor.paginate(:page => params[:page], per_page: 1).search(params[:search], params[:state], params[:township])
 		@search_tag = params[:search]
@@ -11,4 +14,45 @@ class HsDoctorsController < ApplicationController
     	end
 	end
 
+	def index
+		@hs_doctors = HsDoctor.all		
+	end
+
+	def show
+		@hs_doctor = HsDoctor.find(params[:id])
+	end
+
+	def new
+		@hs_doctor = HsDoctor.new		
+	end
+
+	def create
+		@hs_doctor = HsDoctor.new(params[:hs_doctor])
+		if @hs_doctor.save
+			flash[:success] = "El doctor se ha agregado exitosamente"
+			redirect_to action: 'index'
+		else
+			render 'new'
+		end
+	end
+
+	def edit
+		@hs_doctor = HsDoctor.find(params[:id])
+	end
+
+	def update
+		@hs_doctor = HsDoctor.find(params[:id])
+		if @hs_doctor.update_attributes(params[:hs_doctor])
+			flash[:success] = "Doctor actualizado"
+			redirect_to @hs_doctor			
+		else
+			render 'edit'
+		end
+	end
+
+	def destroy
+		HsDoctor.find(params[:id]).destroy
+		flash[:success] = "Doctor eliminado exitosamente"
+		redirect_to action: 'index'
+	end
 end

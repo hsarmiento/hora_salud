@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130409144733) do
+ActiveRecord::Schema.define(:version => 20130411193608) do
 
   create_table "hs_accounts", :force => true do |t|
     t.string   "email"
@@ -67,7 +67,11 @@ ActiveRecord::Schema.define(:version => 20130409144733) do
     t.float    "lng"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "slug"
   end
+
+  add_index "hs_clinics", ["email"], :name => "index_hs_clinics_on_email", :unique => true
+  add_index "hs_clinics", ["slug"], :name => "index_hs_clinics_on_slug"
 
   create_table "hs_days", :force => true do |t|
     t.string   "name"
@@ -86,7 +90,10 @@ ActiveRecord::Schema.define(:version => 20130409144733) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "hs_clinic_id"
+    t.string   "slug"
   end
+
+  add_index "hs_doctors", ["slug"], :name => "index_hs_doctors_on_slug"
 
   create_table "hs_hours", :force => true do |t|
     t.time     "hour"

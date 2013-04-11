@@ -19,6 +19,18 @@ class HsDoctor < ActiveRecord::Base
   belongs_to :hs_clinic
   has_many :hs_subspecialties
 
+  #no mostrar el id en la url
+  extend FriendlyId
+  friendly_id :names, use: :slugged
+
+  #validaciones
+  validates :names, presence: true, length: { minimum: 4}
+  validates :last_names, presence: true, length: { minimum: 4}
+  validates :rut, presence: true, length: { minimum: 8 }
+  validates :specialty, presence: true
+  validates :has_avatar, presence: true
+  validates :hs_clinic_id, presence: true
+
   def self.search(like,state,township)
   	like_condition = "%" + like + "%"
   	if township!=""
