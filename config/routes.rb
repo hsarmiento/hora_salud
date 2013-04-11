@@ -7,6 +7,8 @@ HoraSalud::Application.routes.draw do
 
   root to: 'static_pages#home'
   match '/', to: 'static_pages#home'  
+  match '/contacto', to: 'static_pages#contact'
+  match '/enviar', to: 'static_pages#enviar'
   
   match '/signin', to: 'hs_sessions#new'
   match '/signout', to: 'hs_sessions#destroy', via: :delete
