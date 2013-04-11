@@ -13,4 +13,9 @@
 
 class HsBlog < ActiveRecord::Base
   attr_accessible :abstract, :tags, :text, :title, :has_avatar
+
+  #no mostrar el id en la url
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
 end
