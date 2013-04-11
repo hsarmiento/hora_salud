@@ -1,7 +1,7 @@
 HoraSalud::Application.routes.draw do
   resources :admin, controller: "hs_accounts", as: "hs_accounts"
   resources :hs_sessions, only: [:new, :create, :destory]
-  resources :hs_doctors
+  resources :doctors, controller: "hs_doctors", as: "hs_doctors"
   resources :clinics, controller: "hs_clinics", as: "hs_clinics"
 
   root to: 'static_pages#home'

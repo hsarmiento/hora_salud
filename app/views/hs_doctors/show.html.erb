@@ -1,0 +1,18 @@
+<% provide(:title, 'Doctor') %>
+<h2> Doctor: <%= @hs_doctor.names + ' ' + @hs_doctor.last_names %> </h2>
+
+<div class="doctor">
+	<ul>
+		<li><b> Rut: </b> <%= @hs_doctor.rut %> </li>
+		<li><b> Especialidad: </b> <%= @hs_doctor.specialty %> </li>
+		<li><b> Tiene avatar: </b> <%= @hs_doctor.has_avatar %> </li>
+		<li><b> Clinica: </b> <%= @hs_doctor.hs_clinic_id %> </li>		
+	</ul>
+</div>
+
+<div class="row">
+	<div class="span6 offset3">		
+		<b><%= link_to "Editar", edit_hs_doctor_path(@hs_doctor) %></b> |
+		<b><%= link_to "Eliminar", @hs_doctor, method: :delete, data: { confirm: "Esta seguro?" } %></b>
+	</div>
+</div>
