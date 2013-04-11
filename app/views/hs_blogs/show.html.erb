@@ -1,3 +1,4 @@
+<%= render 'fb_comments' %>
 <div class="body-blog">
 	<div class="container">
 		<h1><%=@entry.title%></h1>
@@ -14,7 +15,13 @@
 				<%= @entry.text%>
 			</div>
 		</div>
+		<div class="span8 offset2" id="fb-div">
+		<%= content_tag(:div, nil, :class => 'fb-comments', "data-href" => "#{request.fullpath}", "data-width" => '600', "data-num-posts" => "2"  ) %>
+		</div>
 		</br>
 	</div>
 	</br>
 </div>
+
+
+<% # content_tag(:div, nil, :class => 'fb-comments', "data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-width" => '470', "data-num-posts" => "2"  ) %>
