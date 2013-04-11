@@ -1,0 +1,29 @@
+<div class="body-blog">
+	<div class="container">
+		<h1>Blog de Hora Salud</h1>
+	</div>
+	<div class="container">
+			<% @entries.each do |entry| %>
+				<div class="row">
+					<div class="span12">
+						<h2><%= link_to entry.title, blog_path(entry.id)%></h2>
+						<h5><%=entry.created_at.strftime("%A %d %B %Y")%></h5>
+					</div>
+					<% if entry.has_avatar == 1 %>
+						<div class="span8 offset2">
+							<%= image_tag "blog/#{entry.id}.png" %>
+						</div>
+					<% end %>
+					<div class="span8 offset2">
+						<%= entry.abstract%>
+					</div>
+					<div class="span2 offset8 ver-mas">
+						<%= link_to "seguir leyendo", blog_path(entry.id)%>
+					</div> 
+				</div>
+				<hr>
+			</br>
+			<% end %>
+		<br/>
+	</div>
+</div>

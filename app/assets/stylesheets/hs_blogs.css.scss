@@ -1,0 +1,53 @@
+// Place all the styles related to the hs_blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.body-blog {
+  height: 100%;
+  padding-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  h1{
+  	color: rgb(63, 143, 184);
+  }
+  h2{
+  	font-size: 2em;
+  }
+  hr{
+	border-top: 2px solid  #eeeeee;
+	border-bottom: 2px solid white;
+   } 
+  h5{
+  	color : #A7AEAF;
+  	margin-top: -25px;
+  	text-align: center;
+  }
+}
+
+.row{
+	/*border-color:green;
+	border-style:solid;*/
+	padding-bottom: 20px;
+	.span12{
+		text-align:center;
+		/*border-color:green;
+		border-style:solid;*/
+	}
+	.span8{
+		text-align: center;
+		margin-top: 10px;
+		/*border-color:green;
+		border-style:solid;*/
+	}
+	.ver-mas{
+		text-align: right;
+		/*margin-left: 625px;*/
+	}
+}
+#fb-div{
+	margin-bottom: 70px;
+}
+
+.container{
+	overflow:auto;
+}

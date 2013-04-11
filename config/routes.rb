@@ -3,6 +3,7 @@ HoraSalud::Application.routes.draw do
   resources :hs_sessions, only: [:new, :create, :destory]
   resources :doctors, controller: "hs_doctors", as: "hs_doctors"
   resources :clinics, controller: "hs_clinics", as: "hs_clinics"
+  resources :blogs, controller: "hs_blogs"
 
   root to: 'static_pages#home'
   match '/', to: 'static_pages#home'  
