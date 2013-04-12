@@ -80,3 +80,15 @@
 		font-size: 16px;
 	}
 }
+
+#contact-div{
+	h3{
+		margin-left: 10px;
+	}
+	form{
+		margin-left: -20px;
+		input[type='submit']{
+			margin-left: 250px;
+		}
+	}
+}

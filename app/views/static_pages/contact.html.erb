@@ -1,8 +1,9 @@
 <div class="body-home">
 	<div class="container">
-		<div class="hero-unit effect-opacity static-size">
+		<div class="hero-unit effect-opacity" id="contact-div">
 			<h2>Eres doctor? Quieres que tu consulta aparezca en Hora Salud?</h2>
 			<h3>Contáctanos!</h3>
+			<br/>
 			<%= form_tag({controller: 'static_pages', action: 'enviar'}, class:"form-horizontal") do%>
 				<div class="control-group">
 					<%= label_tag :nombre, "Nombre de contacto", class: "control-label"%>
