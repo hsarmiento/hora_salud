@@ -21,4 +21,24 @@ class HsBlogsController < ApplicationController
 		end
 	end
 
+	def edit
+		@entry = HsBlog.find(params[:id])		
+	end
+
+	def update
+		@entry = HsBlog.find(params[:id])		
+		if @entry.update_attributes(params[:hs_blog])
+			flash[:success] = "La entrada se ha actualizado exitosamente"
+			redirect_to blog_path(@entry)
+		else
+			render 'edit'			
+		end
+	end
+
+	def destroy
+		HsBlog.find(params[:id]).destroy
+		flash[:success] = "Entrada eliminada exitosamente"
+		redirect_to action: 'index'
+	end
+
 end

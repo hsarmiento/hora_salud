@@ -1,0 +1,33 @@
+<% provide(:title, "Editar entrada") %>
+<h1>Actualizar entrada</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@entry, url: blog_path, html: { multipart: true }) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+
+			<%= f.label :text %>
+			<%= f.text_area :text %>
+
+			<%= f.label :abstract %>
+			<%= f.text_field :abstract %>
+
+			<%= f.label :tags %>
+			<%= f.text_field :tags %>
+
+			<%= f.label :has_avatar %>
+			<%= f.text_field :has_avatar %>
+
+			<%= f.label :image, "Subir imagen" %>
+			<%= f.file_field :image %>
+
+			<%= f.label :remote_image_url, "O url de la imagen" %>
+			<%= f.text_field :remote_image_url %>
+
+			<%= f.submit "Guardar cambios", class: "btn btn-large" %>
+		<% end %>
+	</div>
+</div>
