@@ -1,4 +1,5 @@
 <%= render 'fb_comments' %>
+<%= content_for :title, @entry.title %>
 <div class="body-blog">
 	<div class="container">
 		<h1><%=@entry.title%></h1>
@@ -21,7 +22,10 @@
 				</div>						
 			<% end %>
 		</div>
+		
+
 		<div class="span8 offset2" id="fb-div">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-via="HoraSalud" data-lang="es">Twittear</a>
 		<%= content_tag(:div, nil, :class => 'fb-comments', "data-href" => "#{request.fullpath}", "data-width" => '600', "data-num-posts" => "2"  ) %>
 		</div>
 		</br>
@@ -29,5 +33,8 @@
 	</br>
 </div>
 
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
 
 <% # content_tag(:div, nil, :class => 'fb-comments', "data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-width" => '470', "data-num-posts" => "2"  ) %>
