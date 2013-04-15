@@ -4,7 +4,10 @@
 <ul class="clinics">
 	<% @hs_clinics.each do |clinic| %>
 		<li>
-			<b> <%= link_to clinic.name, clinic %> </b> | <%= link_to "Editar", edit_hs_clinic_path(clinic) %> | <%= link_to "Eliminar", clinic, method: :delete, data: { confirm: "Esta seguro?" } %>
+			<b> <%= link_to clinic.name, clinic %> </b> 
+			<% if signed_in? %>
+				| <%= link_to "Editar", edit_hs_clinic_path(clinic) %> | <%= link_to "Eliminar", clinic, method: :delete, data: { confirm: "Esta seguro?" } %>
+			<% end %>			
 		</li>
 	<% end %>
 </ul>

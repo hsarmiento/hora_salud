@@ -9,10 +9,11 @@
 		<li><b> Clinica: </b> <%= @hs_doctor.hs_clinic_id %> </li>		
 	</ul>
 </div>
-
-<div class="row">
-	<div class="span6 offset3">		
-		<b><%= link_to "Editar", edit_hs_doctor_path(@hs_doctor) %></b> |
-		<b><%= link_to "Eliminar", @hs_doctor, method: :delete, data: { confirm: "Esta seguro?" } %></b>
+<% if signed_in? %>
+	<div class="row">
+		<div class="span6 offset3">		
+			<b><%= link_to "Editar", edit_hs_doctor_path(@hs_doctor) %></b> |
+			<b><%= link_to "Eliminar", @hs_doctor, method: :delete, data: { confirm: "Esta seguro?" } %></b>
+		</div>
 	</div>
-</div>
+<% end %>
