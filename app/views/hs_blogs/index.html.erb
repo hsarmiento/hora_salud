@@ -11,7 +11,7 @@
 					</div>
 					<% if entry.has_avatar == 1 %>
 						<div class="span8 offset2">
-							<%= image_tag "blog/#{entry.id}.png" %>
+							<%= image_tag entry.image_url(:thumb).to_s %>
 						</div>
 					<% end %>
 					<div class="span8 offset2">

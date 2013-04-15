@@ -4,11 +4,14 @@
 #
 #  id         :integer          not null, primary key
 #  title      :string(255)
-#  text       :string(255)
-#  abstract   :string(255)
+#  text       :text
+#  abstract   :text
 #  tags       :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  has_avatar :integer
+#  slug       :string(255)
+#  image      :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

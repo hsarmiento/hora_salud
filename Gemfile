@@ -27,7 +27,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
+#gema para que la url use otro atributo en lugar del tipico /id
 gem 'friendly_id'
+#gema para redimensionar imagenes (manipular imagenes)
+gem 'rmagick'
+#gema para subir imagenes
+gem 'carrierwave'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

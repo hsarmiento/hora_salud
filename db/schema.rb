@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411210933) do
+ActiveRecord::Schema.define(:version => 20130415032042) do
 
   create_table "hs_accounts", :force => true do |t|
     t.string   "email"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130411210933) do
     t.datetime "updated_at", :null => false
     t.integer  "has_avatar"
     t.string   "slug"
+    t.string   "image"
   end
 
   add_index "hs_blogs", ["slug"], :name => "index_hs_blogs_on_slug"
