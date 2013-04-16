@@ -1,8 +1,14 @@
 <div class="doctor-search">
 	<%= form_tag({controller: :hs_doctors, action: 'search', method: 'get'}) do %>
 		  <div class="form-horizontal">
-		      <%= text_field_tag :search, params[:search], class: 'search-query span3', placeholder: 'buscar doctor o especialidad médica' %>
+		      <%= text_field_tag :search, params[:search], class: 'search-query span3', placeholder: 'buscar nombre o apellido doctor' %>
 		     
+		     <select name="specialty" id="specialty">
+		     	<option value="">Seleccione especialidad</option>
+				<% @specialties.each do |specialty| %>
+					<option value="<%=specialty.name%>"><%=specialty.name%></option>
+				<% end %>
+			</select>
 			<select name="state" id="state">
 				<% @states.each do |state| %>
 					<option value="<%=state.id%>"><%=state.name%></option>

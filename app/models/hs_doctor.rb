@@ -32,12 +32,12 @@ class HsDoctor < ActiveRecord::Base
   validates :has_avatar, presence: true
   validates :hs_clinic_id, presence: true
 
-  def self.search(like,state,township)
+  def self.search(like,state,township,specialty)
   	like_condition = "%" + like + "%"
   	if township!=""
-  		joins(:hs_clinic).where("(hs_doctors.names ILIKE ? OR hs_doctors.specialty ILIKE ? OR hs_doctors.last_names ILIKE ? OR hs_doctors.names ||' '|| hs_doctors.last_names ILIKE ?) AND (hs_clinics.hs_state_id = ? AND hs_clinics.township = ?)", like_condition, like_condition, like_condition, like_condition, state, township)
+  		joins(:hs_clinic).where("(hs_doctors.specialty ILIKE ?) AND (hs_doctors.names ILIKE ? OR hs_doctors.last_names ILIKE ? OR hs_doctors.names ||' '|| hs_doctors.last_names ILIKE ?) AND (hs_clinics.hs_state_id = ? AND hs_clinics.township = ?)", specialty, like_condition, like_condition, like_condition, state, township)
   	else
-		  joins(:hs_clinic).where("(hs_doctors.names ILIKE ? OR hs_doctors.specialty ILIKE ? OR hs_doctors.last_names ILIKE ? OR hs_doctors.names ||' '|| hs_doctors.last_names ILIKE ?) AND (hs_clinics.hs_state_id = ?)", like_condition, like_condition, like_condition, like_condition, state)
+		  joins(:hs_clinic).where("(hs_doctors.specialty ILIKE ?) AND (hs_doctors.names ILIKE ? OR hs_doctors.last_names ILIKE ? OR hs_doctors.names ||' '|| hs_doctors.last_names ILIKE ?) AND (hs_clinics.hs_state_id = ?)", specialty, like_condition, like_condition, like_condition, state)
   	end  
   	#find(:all, conditions: ['name LIKE ? OR specialty LIKE ? OR last_name LIKE ?', search_condition, search_condition, search_condition])
   end
