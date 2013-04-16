@@ -16,7 +16,16 @@
 			<%= f.text_field :rut %>
 
 			<%= f.label :specialty %>
-			<%= f.text_field :specialty %>
+			<select name="hs_doctor[specialty]" id="hs_doctor_specialty">
+				<% @hs_specialties.each do |specialty| %>
+					<% if @hs_doctor.specialty == specialty.name %>
+						<option selected value="<%=specialty.name%>"><%=specialty.name%></option>
+					<% else %>
+						<option value="<%=specialty.name%>"><%=specialty.name%></option>
+					<% end %>
+					
+				<% end %>
+			</select>
 
 			<%= f.label :has_avatar %>
 			<%= f.text_field :has_avatar %>

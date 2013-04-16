@@ -23,7 +23,8 @@ class HsDoctorsController < ApplicationController
 	end
 
 	def new
-		@hs_doctor = HsDoctor.new		
+		@hs_doctor = HsDoctor.new
+		@hs_specialties = HsSpecialty.find(:all, order: "name asc")		
 	end
 
 	def create
@@ -38,6 +39,7 @@ class HsDoctorsController < ApplicationController
 
 	def edit
 		@hs_doctor = HsDoctor.find(params[:id])
+		@hs_specialties = HsSpecialty.find(:all, order: "name asc")	
 	end
 
 	def update
