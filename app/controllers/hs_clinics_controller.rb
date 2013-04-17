@@ -12,6 +12,8 @@ class HsClinicsController < ApplicationController
 
 	def new
 		@hs_clinic = HsClinic.new
+		@hs_states = HsState.all
+		@hs_townships = HsTownship.all
 	end
 
 	def create
@@ -26,6 +28,8 @@ class HsClinicsController < ApplicationController
 
 	def edit
 		@hs_clinic = HsClinic.find(params[:id])
+		@hs_states = HsState.all
+		@hs_townships = HsTownship.all
 	end
 
 	def update
