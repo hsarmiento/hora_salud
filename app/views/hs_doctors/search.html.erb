@@ -1,28 +1,26 @@
-<div class="body-home">
-	<div class="container">
-		<div class="hero-unit effect-opacity">
-			<h2>Resultados para <strong>"<%= @search_tag %>"</strong></h2>
-			<% if @doctors.any? %>
-			<ul>
-				<% @doctors.each do |doctor| %>
-					<li><strong><%=doctor.hs_clinic.name%></strong>
-						<dl class="dl-horizontal">
-							<dt>Profesional</dt>
-							<dd>Dr. <%= doctor.names.camelize %><%= ' '+doctor.last_names.camelize%> - <%= doctor.specialty.camelize %>
-							</dd>
-							<dt>Dirección</dt>
-							<dd><%= doctor.hs_clinic.address %> - <%= doctor.hs_clinic.township.downcase.camelize%></dd>
-							<dt>Teléfono</dt>
-							<dd><%= doctor.hs_clinic.phone %></dd>
-						</dl>
-					</li>
-				<% end %>
-			</ul>
-			<%= will_paginate @doctors, params: {search: @search_tag, state: @state_tag, township: @township_tag} %>
+<section>
+    <div class="result">
+        <div class="box">
+            <h3>Resultados de búsqueda de <%=@specialty%> para: </h3>
+            <span class="tag"><strong>"<%= @search_tag %>"</strong></span>
+            <% if @doctors.any? %>
+	            <ul>
+	            	<% @doctors.each do |doctor| %>
+		                <li>
+		                	<h4><b><%=doctor.hs_clinic.name%></b></h4>
+		                    <p><b>Profesional:</b>Dr. <%= doctor.names.camelize %><%= ' '+doctor.last_names.camelize%></p>
+		                   	<p><b>Especialidad:</b> <%= doctor.specialty.camelize %></p>
+		                    <p><b>Dirección:</b><%= doctor.hs_clinic.address %> - <%= doctor.hs_clinic.township.downcase.camelize%></p>
+		                    <p><b>Teléfono:</b><%= doctor.hs_clinic.phone %></p>
+
+		                </li>
+	                <% end %>
+	                <li class="clearFull">&nbsp;</li>
+	            </ul>
+	            <%= will_paginate @doctors, params: {search: @search_tag, state: @state_tag, township: @township_tag, specialty: @specialty} %>
 			<% else %>
 				<strong>No se encontraron resultados de su búsqueda </strong>
-			<% end %>
-		</div>
-	</div>
-</div>
-
+	        <% end %>
+        </div>
+    </div>
+</section>

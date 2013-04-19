@@ -34,7 +34,11 @@ class HsDoctor < ActiveRecord::Base
 
   def self.search(like,state,township,specialty)
   	like_condition = "%" + like + "%"
-  	if township!=""
+    if like =="" and township == ""
+      joins(:hs_clinic).where("(hs_doctors.specialty ILIKE ?) AND (hs_clinics.hs_state_id = ?)", specialty, state)
+  	elsif like == "" and township != ""
+      joins(:hs_clinic).where("(hs_doctors.specialty ILIKE ?) AND (hs_clinics.hs_state_id = ? AND hs_clinics.township = ?)", specialty, state, township)
+    elsif township!=""
   		joins(:hs_clinic).where("(hs_doctors.specialty ILIKE ?) AND (hs_doctors.names ILIKE ? OR hs_doctors.last_names ILIKE ? OR hs_doctors.names ||' '|| hs_doctors.last_names ILIKE ?) AND (hs_clinics.hs_state_id = ? AND hs_clinics.township = ?)", specialty, like_condition, like_condition, like_condition, state, township)
   	else
 		  joins(:hs_clinic).where("(hs_doctors.specialty ILIKE ?) AND (hs_doctors.names ILIKE ? OR hs_doctors.last_names ILIKE ? OR hs_doctors.names ||' '|| hs_doctors.last_names ILIKE ?) AND (hs_clinics.hs_state_id = ?)", specialty, like_condition, like_condition, like_condition, state)

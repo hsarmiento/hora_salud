@@ -1,12 +1,12 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
-    <div class="container">
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Inicio", root_path %></li>          
-          <% if signed_in? %>
-            <!-- Clinicas -->
-            <li id="fat-menu" class="dropdown">
+<h1 class="desc">descrpción de como te buscaria la gente en internet</h1>
+<nav class="fixed-header">
+    <figure>
+        <%= link_to image_tag("iso.png"), root_path %>
+    </figure>
+    <ul>
+        <li><%= link_to "Inicio", root_path %></li>
+        <% if signed_in? %>
+        	<li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Clinicas <b class="caret"></b>
               </a>
@@ -49,12 +49,9 @@
                 </li>
               </ul>
             </li>
-          <% else %>
-            <li><%= link_to "Blog", blogs_path %></li>
+        <% else %>
+        	<li><%= link_to "Blog", blogs_path %></li>
             <li><%= link_to "Contacto", contacto_path %></li>
-          <% end %> 
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
+        <% end %>
+    </ul>
+</nav>

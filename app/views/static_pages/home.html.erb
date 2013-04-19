@@ -1,15 +1,55 @@
-<div class="body-home">
-	<div class="container">
-		<div class="hero-unit effect-opacity static-size">
-			<div id="logo-body"></div>
-			<p>¿Quieres encontrar el doctor que buscas con solo un click? Con <strong>Hora Salud</strong> te ayudamos a elegir la consulta médica que tu necesitas.</p>
-			<%= render 'search_doctor' %>
-		</div>
-	</div>
-</div>
-
+<section>
+    <article>
+        <figure>
+            <%= image_tag("logo.png") %>
+            <figcaption>
+                <h2>¿Quieres encontrar el doctor que buscas con solo un click? Con <strong>Hora Salud</strong> te ayudamos a elegir la consulta médica que tu necesitas.</h2>
+            </figcaption>
+        </figure>
+        <div class="box_form">
+            <%= form_tag({controller: :hs_doctors, action: 'search', method: 'get'}, id: "form_search_doctor") do %>
+                <div class="wrapp">
+                        <%= text_field_tag :search, params[:search], placeholder: 'buscar nombre o apellido doctor' %>
+                        <select name="specialty" id="specialty">
+				     	<option value="">Seleccione especialidad</option>
+						<% @specialties.each do |specialty| %>
+							<option value="<%=specialty.name%>"><%=specialty.name%></option>
+						<% end %>
+					</select>
+					<select name="state" id="state">
+						<% @states.each do |state| %>
+							<option value="<%=state.id%>"><%=state.name%></option>
+						<% end %>
+					</select>
+					<input type="hidden" id="hidden_township" name="township" value="">
+					<a href="#add_township" id="add_township">agregar comuna?</a>
+					<select name="township" id="township" disabled style="display:none">		
+						<% @townships.each do |township| %>	
+							<option value="<%=township.name%>" class="<%=township.hs_state_id%>"><%=township.name.downcase.camelize%></option>
+						<% end %>		 
+					</select>
+                </div>
+                <div class="wrapp button">
+                	<%= submit_tag "Buscar", name: nil, class: "btn btn-success" %>
+                </div>
+            <% end %>
+        </div>
+    </article>
+</section>
 <script type="text/javascript">
-// window.onload = function() {
-// 	     //dynamicSelect("state", "township");
-// 	 }
+	$("#add_township").click(function(){
+		dynamicSelect("state", "township");
+		$("#hidden_township").attr("disabled", "disabled");
+		$(this).fadeOut('fast',function(){
+			$("#township").removeAttr("disabled").fadeIn('100')
+		});		
+	});
+
+	$("#form_search_doctor").submit(function(){
+		if($("#specialty").val() == ""){
+			$("#specialty").css("border", "solid 2px red");
+			return false;
+		}
+		
+	});
 </script>

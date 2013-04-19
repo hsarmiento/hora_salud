@@ -3,19 +3,99 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.body-home {
+.box_form{
+    text-align: center;
+    background: rgba(255,255,255, 0.6);
+    border-top:solid 1px rgba(0,0,0, 0.1);
+    border-bottom:solid 1px rgba(0,0,0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+    input{
+        font-size: 0.9em;
+    }
+    a{
+        color: #069;
+        display: inline-block;
+        width: 90px;
+        margin: 8px 10px 0 0;
+    }
+    input[type="text"]{
+        width: 240px;
+        padding: 8px 10px;
+        border-radius: 5px;
+        border:solid 1px #CCC;
+        box-shadow: -1px -1px 3px rgba(0,0,0, 0.1) inset;
+        margin-right: 10px;
+        display: inline-block;
+    }
+    select{
+        height: 38px;
+        /*background: #EEE;*/
+        border:solid 1px #CCC;
+        margin: -10px 10px 0 0 !important;
+        display: inline-block;
+        font-size: 0.9em;
+        width: 220px;
+    }
+}
+
+
+.box{
+    padding: 20px 40px;
+    h3, h4{
+        margin: 0;
+        padding: 0;
+    }
+    .tag{
+        border-bottom: solid 2px #CCC;
+        margin-bottom: 10px;
+        width: 100%;
+        float: right;
+        font-size: 18px;
+    }
+    h4{
+        color: #666;
+        font-weight: 200;
+        border-bottom: solid 1px #CCC;
+        margin-bottom: 10px;
+    }
+    ul{
+        margin-top: 40px;
+    }
+    li{
+        padding: 10px;
+        background: rgba(255,255,255, 0.8);
+        margin:0 0 5px 0;
+        p{
+            padding:5px 10px;
+            margin: 0;
+            b{
+                display: block;
+                float: left;
+                width: 100px;
+            }
+            a{
+                color: #069;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/*.body-home {
   height: 100%;
   padding-top: 30px;
   margin-left: auto;
   margin-right: auto;
   /*width: 1600px;*/
-  background-image:url('doctors.jpg');
+  /*background-image:url('doctors.jpg');
   background-repeat:no-repeat;
   background-size: 1366px 768px;
   background-color: transparent;
-  background-position: center;
+  background-position: center;*/
   /*background-repeat:repeat-y; */
-  h2{
+/*  h2{
   	color: #0088cc;
   }
 }
@@ -33,7 +113,6 @@
 	opacity: 0.9;
 	border:1px solid gray;
 	background-color:#ffffff;
-	/*margin-top: -30px;*/
 	p{
 		margin-top: 10px;
 		text-align: center;
@@ -53,8 +132,6 @@
 .doctor-search{
 	margin-top: 30px;
 	margin-left: 10px;
-	/*border-color: red;
-	border-style: solid;*/
 	input,select{
 		margin-right: 20px;
 	}
@@ -91,4 +168,4 @@
 			margin-left: 250px;
 		}
 	}
-}
+}*/

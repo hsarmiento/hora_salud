@@ -1,12 +1,12 @@
 <div class="body-blog">
 	<div class="container">
-		<h1>Blog de Hora Salud</h1>
+		<h2>Blog de Hora Salud</h2>
 	</div>
 	<div class="container">
 			<% @entries.each do |entry| %>
 				<div class="row">
 					<div class="span12">
-						<h2><%= link_to entry.title, blog_path(entry)%></h2>
+						<h3><%= link_to entry.title, blog_path(entry)%></h3>
 						<h5><%=entry.created_at.strftime("%A %d %B %Y")%></h5>
 					</div>
 					<% if entry.has_avatar == 1 %>
