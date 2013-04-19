@@ -15,11 +15,12 @@
 
 		                </li>
 	                <% end %>
-	                <li class="clearFull">&nbsp;</li>
+	                <!-- <li class="clearFull">&nbsp;</li> -->
 	            </ul>
 	            <%= will_paginate @doctors, params: {search: @search_tag, state: @state_tag, township: @township_tag, specialty: @specialty} %>
 			<% else %>
 				<strong>No se encontraron resultados de su búsqueda </strong>
+				<li class="clearFull">&nbsp;</li>
 	        <% end %>
         </div>
     </div>
