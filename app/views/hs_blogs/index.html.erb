@@ -7,7 +7,7 @@
 				<div class="row">
 					<div class="span12">
 						<h3><%= link_to entry.title, blog_path(entry)%></h3>
-						<h5><%=entry.created_at.strftime("%A %d %B %Y")%></h5>
+						<h5><%=I18n.localize(entry.created_at, format: :long)%></h5>
 					</div>
 					<% if entry.has_avatar == 1 %>
 						<div class="span8 offset2">

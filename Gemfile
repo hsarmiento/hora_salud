@@ -33,6 +33,10 @@ gem 'friendly_id'
 gem 'rmagick'
 #gema para subir imagenes
 gem 'carrierwave'
+#gema para traduccion
+gem 'rails-i18n'
+
+#gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

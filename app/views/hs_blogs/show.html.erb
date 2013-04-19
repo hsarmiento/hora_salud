@@ -3,7 +3,7 @@
 <div class="body-blog">
 	<div class="container">
 		<h2><%=@entry.title%></h2>
-		<h5><%=@entry.created_at.strftime("%A %d %B %Y")%></h5>
+		<h5><%=I18n.localize(@entry.created_at, format: :long)%></h5>
 	</div>
 	<div class="container">
 		<div class="row" >
