@@ -144,6 +144,9 @@ select:focus, input[type="text"]:focus {
     padding: 10px 0 0 0;
 }
 
+.btn-success{
+    font-size: 1.2em !important;
+}
 
 .btn-success{
     padding: 8px 20px;
@@ -174,7 +177,7 @@ select:focus, input[type="text"]:focus {
     width: 80%;
     background: rgba(255,255,255, 0.8);
     box-shadow: 0 0 10px rgba(255,255,255, 0.8);
-    margin: 0px auto;
+    margin: 57px auto;
     overflow: hidden;
 }
 
@@ -225,4 +228,8 @@ transform-origin: top left;
 -webkit-transform-origin: top left;
 -moz-transform-origin: top left;
 -webkit-transform-origin: top left;
+}
+
+.pull-right{
+    margin-right: 100px;
 }

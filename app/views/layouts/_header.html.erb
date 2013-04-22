@@ -3,10 +3,10 @@
     <figure>
         <%= link_to image_tag("iso.png"), root_path %>
     </figure>
-    <ul>
+    <ul class="pull-right">
         <li><%= link_to "Inicio", root_path %></li>
         <% if signed_in? %>
-        	<li id="fat-menu" class="dropdown">
+          <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Clinicas <b class="caret"></b>
               </a>
@@ -43,14 +43,14 @@
               <ul class="dropdown-menu">
                 <li><%= link_to "Perfil", hs_account_path(current_user) %></li>
                 <li><%= link_to "Configuración", edit_hs_account_path(current_user) %></li>
-                <li class="divider"></li>
+                <!-- <li class="divider"></li> -->
                 <li>
                   <%= link_to "Salir", signout_path, method: "delete" %>
                 </li>
               </ul>
             </li>
         <% else %>
-        	<li><%= link_to "Blog", blogs_path %></li>
+          <li><%= link_to "Blog", blogs_path %></li>
             <li><%= link_to "Contacto", contacto_path %></li>
         <% end %>
     </ul>
