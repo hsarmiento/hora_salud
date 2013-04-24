@@ -20,8 +20,9 @@
 
 class HsClinic < ActiveRecord::Base
 
-  attr_accessible :address, :country, :email, :hs_account_id, :hs_state_id, :lat, :lng, :name, :phone, :township
+  attr_accessible :address, :country, :email, :hs_account_id, :hs_state_id, :lat, :lng, :name, :phone, :township, :hs_doctors_attributes
   has_many :hs_doctors
+  accepts_nested_attributes_for :hs_doctors
 
   before_save { |hs_clinic| hs_clinic.email = email.downcase }
 

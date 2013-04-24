@@ -1,0 +1,17 @@
+<%= f.label :names %>
+<%= f.text_field :names %>
+
+<%= f.label :last_names %>
+<%= f.text_field :last_names %>
+
+<%= f.label :rut %>
+<%= f.text_field :rut %>
+
+
+<%= f.label :specialty %>
+<% specialties = HsSpecialty.find(:all, order: "name asc").map{ |specialty| [specialty.name, specialty.name] } %>
+<%= f.select(:specialty, options_for_select(specialties)) %> 
+
+<%= f.label :has_avatar %>
+<%= f.text_field :has_avatar %>
+<%= f.link_to_remove "Quitar doctor" %>

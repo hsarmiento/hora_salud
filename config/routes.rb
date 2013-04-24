@@ -14,6 +14,7 @@ HoraSalud::Application.routes.draw do
   match '/signout', to: 'hs_sessions#destroy', via: :delete
 
   match '/search', to: 'hs_doctors#search'
+  match '/agregar_clinica', to: 'hs_clinics#new_clinic_doctors'
 
 
   # The priority is based upon order of creation:

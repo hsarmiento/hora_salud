@@ -1,6 +1,7 @@
 class HsClinicsController < ApplicationController
-	before_filter :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
-	before_filter :admin_user, only: [:new, :create, :edit, :update, :destroy]
+	before_filter :signed_in_user, only: [:new, :edit, :update, :destroy]
+	before_filter :admin_user, only: [:new, :edit, :update, :destroy]
+	
 
 	def index
 		@hs_clinics = HsClinic.all
@@ -16,13 +17,28 @@ class HsClinicsController < ApplicationController
 		@hs_townships = HsTownship.all
 	end
 
+	def new_clinic_doctors
+		@hs_clinic = HsClinic.new
+		@hs_clinic.hs_doctors.build
+		@hs_states = HsState.all
+		@hs_townships = HsTownship.all
+	end
+
 	def create
 		@hs_clinic = HsClinic.new(params[:hs_clinic])
 		if @hs_clinic.save
 			flash[:success] = "La clinica se ha agregado exitosamente"
-			redirect_to action: 'index'
+			if signed_in?				
+				redirect_to action: 'index'
+			else							
+				redirect_to root_url
+			end
 		else
-			render 'new'
+			if signed_in?
+				redirect_to action: 'new'
+			else
+				redirect_to action: 'new_clinic_doctors'
+			end
 		end
 	end
 

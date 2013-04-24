@@ -35,6 +35,8 @@ gem 'rmagick'
 gem 'carrierwave'
 #gema para traduccion
 gem 'rails-i18n'
+#gema para formularios con nested attributes
+gem 'nested_form'
 
 #gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git'
 
