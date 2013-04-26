@@ -15,6 +15,9 @@ HoraSalud::Application.routes.draw do
 
   match '/search', to: 'hs_doctors#search'
   match '/agregar_clinica', to: 'hs_clinics#new_clinic_doctors'
+  match '/consultas_santiago', to: 'hs_clinics#clinics_stgo'
+
+  
 
 
   # The priority is based upon order of creation:

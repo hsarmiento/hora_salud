@@ -1,17 +1,35 @@
-<%= f.label :names %>
-<%= f.text_field :names %>
-
-<%= f.label :last_names %>
-<%= f.text_field :last_names %>
-
-<%= f.label :rut %>
-<%= f.text_field :rut %>
-
-
-<%= f.label :specialty %>
-<% specialties = HsSpecialty.find(:all, order: "name asc").map{ |specialty| [specialty.name, specialty.name] } %>
-<%= f.select(:specialty, options_for_select(specialties)) %> 
-
-<%= f.label :has_avatar %>
-<%= f.text_field :has_avatar %>
+</br>
+<h4>Agregar Doctor</h4>
+<div class="row-fluid">
+	<div class="span3">
+		<%= f.label :names, "Nombre" %>
+		<%= f.text_field :names %>
+	</div>		
+	<div class="span3">
+		<%= f.label :last_names, "Apellidos" %>
+		<%= f.text_field :last_names %>
+	</div>
+	<div class="span3">
+		<%= f.label :rut, "Rut" %>
+		<%= f.text_field :rut %>
+	</div>
+	<div class="span3">
+		<%= f.label :specialty, "Especialidad médica" %>
+		<% specialties = HsSpecialty.find(:all, order: "name asc").map{ |specialty| [specialty.name, specialty.name] } %>
+		<%= f.select(:specialty, options_for_select(specialties)) %> 
+	</div>
+</div>
 <%= f.link_to_remove "Quitar doctor" %>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -29,7 +29,7 @@ class HsDoctor < ActiveRecord::Base
   validates :last_names, presence: true, length: { minimum: 4}
   validates :rut, presence: true, length: { minimum: 8 }
   validates :specialty, presence: true
-  validates :has_avatar, presence: true
+  #validates :has_avatar, presence: true
   # validates :hs_clinic_id, presence: true
 
   def self.search(like,state,township,specialty)

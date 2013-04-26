@@ -5,7 +5,7 @@ class HsDoctorsController < ApplicationController
 	before_filter :admin_user, only: [:new, :create, :edit, :update, :destroy]
 
 	def search
-		@doctors = HsDoctor.paginate(:page => params[:page], per_page: 1).search(params[:search], params[:state], params[:township], params[:specialty])
+		@doctors = HsDoctor.paginate(page:  params[:page], per_page: 1).search(params[:search], params[:state], params[:township], params[:specialty])
 		@search_tag = params[:search]
 		@township_tag = params[:township]
 		@state_tag = params[:state]

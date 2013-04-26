@@ -7,6 +7,10 @@ class HsClinicsController < ApplicationController
 		@hs_clinics = HsClinic.all
 	end
 
+	def clinics_stgo
+		@hs_clinics = HsClinic.paginate(page: params[:page], per_page: 2).where("hs_state_id = 7")
+	end
+
 	def show
 		@hs_clinic = HsClinic.find(params[:id])
 	end

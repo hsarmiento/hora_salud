@@ -1,53 +1,59 @@
-<% provide(:title, 'Nueva clinica') %>
-<section class="no-background">
-	<h2>Agregar clínica</h2>
-	<div class="row">
-		<div class="span6 offset3">
-			<%= nested_form_for @hs_clinic do |f| %>
+<% provide(:title, 'Agregar clínica') %>
+<section class="one-color">
+	<div class="container hero-unit form-container">
+		<figcaption>
+	    	<h2>TEXTO TEXTO PARA QUEDAR COMO REY CON LAS TERRIBLES GEMAS</h2>
+		</figcaption>
+		<h2>Agregar clínica</h2>
+			<%= nested_form_for @hs_clinic, html: {class: "form-horizontal"} do |f| %>
 				<%= render 'shared/error_messages', object: f.object %>
-
-				<%= f.label :name %>
-				<%= f.text_field :name %>
-
-				<%= f.label :address %>
-				<%= f.text_field :address %>
-
-				<%= f.label :country %>
-				<%= f.text_field :country %>
-
-				<label for="hs_clinic_hs_state_id">State</label>
-				<select name="hs_clinic[hs_state_id]" id="hs_clinic_hs_state_id">
-					<% @hs_states.each do |state| %>
-						<option value="<%=state.id%>"><%=state.name%></option>
-					<% end %>
-				</select>
-				<label for="hs_clinic_township">Township</label>
-				<select name="hs_clinic[township]" id="hs_clinic_township">		
-					<% @hs_townships.each do |township| %>	
-						<option value="<%=township.name%>" class="<%=township.hs_state_id%>"><%=township.name.downcase.camelize%></option>
-					<% end %>		 
-				</select>
-
-
-				<%= f.label :phone %>
-				<%= f.text_field :phone %>
-
-				<%= f.label :email %>
-				<%= f.text_field :email %>
-
-				<%= f.label :lat %>
-				<%= f.text_field :lat%>
-
-				<%= f.label :lng %>
-				<%= f.text_field :lng %>
+				<div class="row-fluid">
+					<div class="span4">
+						<%= f.label :name, "Nombre Clínica" %>
+						<%= f.text_field :name %>
+					</div>		
+					<div class="span4">
+						<%= f.label :address, "Dirección" %>
+						<%= f.text_field :address %>
+					</div>
+					<div class="span4">
+						<%= f.label :phone, "Teléfono" %>
+						<%= f.text_field :phone %>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4">
+						<label for="hs_clinic_hs_state_id">Región</label>
+						<select name="hs_clinic[hs_state_id]" id="hs_clinic_hs_state_id">
+							<% @hs_states.each do |state| %>
+								<option value="<%=state.id%>"><%=state.name%></option>
+							<% end %>
+						</select>
+					</div>		
+					<div class="span4">
+						<label for="hs_clinic_township">Comuna</label>
+						<select name="hs_clinic[township]" id="hs_clinic_township">		
+							<% @hs_townships.each do |township| %>	
+								<option value="<%=township.name%>" class="<%=township.hs_state_id%>"><%=township.name.downcase.camelize%></option>
+							<% end %>		 
+						</select>
+					</div>
+					<div class="span4">
+						<%= f.label :email, "Email" %>
+						<%= f.text_field :email %>
+						
+					</div>
+				</div>
+				<%= f.hidden_field :country, value: "Chile" %>
 
 				<%= f.fields_for :hs_doctors, @hs_clinic.hs_doctors do |builder|%>
 					<%= render '/hs_doctors/form_add_doctor', f: builder %>
 				<% end %>
-				<%= f.link_to_add "Agregar doctor", :hs_doctors %>
-				<%= f.submit "Agregar clinica", class: "btn btn-large" %>
+				<%= f.link_to_add "Agregar otro doctor", :hs_doctors %>
+				<p>
+					<%= f.submit "Agregar clinica", class: "btn btn-primary btn-large submit-clinic " %>
+				</p>			
 			<% end %>
-		</div>
 	</div>
 </section>
 

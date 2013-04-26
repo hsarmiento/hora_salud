@@ -1,3 +1,23 @@
 // Place all the styles related to the hs_clinics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.remove_nested_fields{
+	float:right;
+	font-size: 16px;
+}
+
+.add_nested_fields{
+	font-size: 16px;
+}	
+
+.submit-clinic{
+	margin-top: 20px;
+}
+
+.form-container{
+    background: rgba(255,255,255, 0.8);
+    box-shadow: 0 0 10px rgba(255,255,255, 0.8);
+    border-radius:5px;
+    overflow: hidden;
+}
