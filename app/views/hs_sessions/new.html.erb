@@ -1,16 +1,16 @@
 <% provide(:title, "Identificarse") %>
-<h1>Identificarse</h1>
+<section class="section-admin">
+	<div class="row">
+		<div class="span6 offset3">
+			<%= form_for(:hs_sessions, url: hs_sessions_path) do |f| %>
+				<%= f.label :email %>
+				<%= f.text_field :email %>
 
-<div class="row">
-	<div class="span6 offset3">
-		<%= form_for(:hs_sessions, url: hs_sessions_path) do |f| %>
-			<%= f.label :email %>
-			<%= f.text_field :email %>
+				<%= f.label :password %>
+				<%= f.password_field :password %>
 
-			<%= f.label :password %>
-			<%= f.password_field :password %>
-
-			<%= f.submit "Entrar", class: "btn btn-large" %>
-		<% end %>
+				<%= f.submit "Entrar", class: "btn btn-large" %>
+			<% end %>
+		</div>
 	</div>
-</div>
+</section>

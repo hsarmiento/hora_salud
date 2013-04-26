@@ -1,50 +1,51 @@
 <% provide(:title, 'Nueva clinica') %>
-<h1>Crear clinica</h1>
+<section class="section-admin">
+	<div class="row">		
+		<div class="span6 offset3">
+			<h2>Agregar clínica</h2>
+			<%= form_for(@hs_clinic) do |f| %>
+				<%= render 'shared/error_messages', object: f.object %>
 
-<div class="row">
-	<div class="span6 offset3">
-		<%= form_for(@hs_clinic) do |f| %>
-			<%= render 'shared/error_messages', object: f.object %>
+				<%= f.label :name %>
+				<%= f.text_field :name %>
 
-			<%= f.label :name %>
-			<%= f.text_field :name %>
+				<%= f.label :address %>
+				<%= f.text_field :address %>
 
-			<%= f.label :address %>
-			<%= f.text_field :address %>
+				<%= f.label :country %>
+				<%= f.text_field :country %>
 
-			<%= f.label :country %>
-			<%= f.text_field :country %>
-
-			<label for="hs_clinic_hs_state_id">State</label>
-			<select name="hs_clinic[hs_state_id]" id="hs_clinic_hs_state_id">
-				<% @hs_states.each do |state| %>
-					<option value="<%=state.id%>"><%=state.name%></option>
-				<% end %>
-			</select>
-			<label for="hs_clinic_township">Township</label>
-			<select name="hs_clinic[township]" id="hs_clinic_township">		
-				<% @hs_townships.each do |township| %>	
-					<option value="<%=township.name%>" class="<%=township.hs_state_id%>"><%=township.name.downcase.camelize%></option>
-				<% end %>		 
-			</select>
+				<label for="hs_clinic_hs_state_id">State</label>
+				<select name="hs_clinic[hs_state_id]" id="hs_clinic_hs_state_id">
+					<% @hs_states.each do |state| %>
+						<option value="<%=state.id%>"><%=state.name%></option>
+					<% end %>
+				</select>
+				<label for="hs_clinic_township">Township</label>
+				<select name="hs_clinic[township]" id="hs_clinic_township">		
+					<% @hs_townships.each do |township| %>	
+						<option value="<%=township.name%>" class="<%=township.hs_state_id%>"><%=township.name.downcase.camelize%></option>
+					<% end %>		 
+				</select>
 
 
-			<%= f.label :phone %>
-			<%= f.text_field :phone %>
+				<%= f.label :phone %>
+				<%= f.text_field :phone %>
 
-			<%= f.label :email %>
-			<%= f.text_field :email %>
+				<%= f.label :email %>
+				<%= f.text_field :email %>
 
-			<%= f.label :lat %>
-			<%= f.text_field :lat%>
+				<%= f.label :lat %>
+				<%= f.text_field :lat%>
 
-			<%= f.label :lng %>
-			<%= f.text_field :lng %>
+				<%= f.label :lng %>
+				<%= f.text_field :lng %>
 
-			<%= f.submit "Agregar clinica", class: "btn btn-large" %>
-		<% end %>
+				<%= f.submit "Agregar clinica", class: "btn btn-large" %>
+			<% end %>
+		</div>
 	</div>
-</div>
+</section>
 
 
 <script type="text/javascript">

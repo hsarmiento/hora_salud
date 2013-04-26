@@ -1,35 +1,35 @@
 <% provide(:title, 'Nuevo doctor') %>
-<h1>Crear doctor</h1>
+<section class="section-admin">
+	<div class="row">
+		<div class="span6 offset3">
+			<%= form_for(@hs_doctor) do |f| %>
+				<%= render 'shared/error_messages', object: f.object %>
 
-<div class="row">
-	<div class="span6 offset3">
-		<%= form_for(@hs_doctor) do |f| %>
-			<%= render 'shared/error_messages', object: f.object %>
+				<%= f.label :names %>
+				<%= f.text_field :names %>
 
-			<%= f.label :names %>
-			<%= f.text_field :names %>
+				<%= f.label :last_names %>
+				<%= f.text_field :last_names %>
 
-			<%= f.label :last_names %>
-			<%= f.text_field :last_names %>
-
-			<%= f.label :rut %>
-			<%= f.text_field :rut %>
+				<%= f.label :rut %>
+				<%= f.text_field :rut %>
 
 
-			<%= f.label :specialty %>
-			<select name="hs_doctor[specialty]" id="hs_doctor_specialty">
-				<% @hs_specialties.each do |specialty| %>
-					<option value="<%=specialty.name%>"><%=specialty.name%></option>
-				<% end %>
-			</select>
+				<%= f.label :specialty %>
+				<select name="hs_doctor[specialty]" id="hs_doctor_specialty">
+					<% @hs_specialties.each do |specialty| %>
+						<option value="<%=specialty.name%>"><%=specialty.name%></option>
+					<% end %>
+				</select>
 
-			<%= f.label :has_avatar %>
-			<%= f.text_field :has_avatar %>
+				<%= f.label :has_avatar %>
+				<%= f.text_field :has_avatar %>
 
-			<%= f.label :hs_clinic_id %>
-			<%= f.text_field :hs_clinic_id %>
+				<%= f.label :hs_clinic_id %>
+				<%= f.text_field :hs_clinic_id %>
 
-			<%= f.submit "Agregar doctor", class: "btn btn-large" %>
-		<% end %>
+				<%= f.submit "Agregar doctor", class: "btn btn-large" %>
+			<% end %>
+		</div>
 	</div>
-</div>
+</section>

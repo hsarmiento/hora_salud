@@ -1,13 +1,18 @@
 <% provide(:title, 'Doctores') %>
-<h1>Doctores</h1>
-
-<ul class="doctors">
-	<% @hs_doctors.each do |doctor| %>
-		<li>
-			<b> <%= link_to doctor.names+ ' ' + doctor.last_names, doctor %> </b> 
-			<% if signed_in? %>
-				| <%= link_to "Editar", edit_hs_doctor_path(doctor) %> | <%= link_to "Eliminar", doctor, method: :delete, data: { confirm: "Esta seguro?" } %>
-			<% end %>
-		</li>
-	<% end %>
-</ul>
+<section class="section-admin">
+	<div class="row">
+		<div class="span6 offset1">
+			<h2>Doctores</h2>
+			<ul class="doctors">
+				<% @hs_doctors.each do |doctor| %>
+					<li>
+						<b> <%= link_to doctor.names+ ' ' + doctor.last_names, doctor %> </b> 
+						<% if signed_in? %>
+							| <%= link_to "Editar", edit_hs_doctor_path(doctor) %> | <%= link_to "Eliminar", doctor, method: :delete, data: { confirm: "Esta seguro?" } %>
+						<% end %>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</section>

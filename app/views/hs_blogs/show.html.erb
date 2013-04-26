@@ -1,5 +1,5 @@
 <%= render 'fb_comments' %>
-<%= content_for :title, @entry.title %>
+<%= provide(:title, @entry.title) %>
 <div class="body-blog">
 	<div class="container">
 		<h2><%=@entry.title%></h2>
