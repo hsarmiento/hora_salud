@@ -1,0 +1,29 @@
+<% provide(:title, 'Clínicas en Stgo') %>
+
+<section>
+    <div class="result">
+        <div class="box">
+        	<h3>Consultas médicas en Santiago</h3>
+        	<span class="tag"></span>
+        	<ul>
+	        	<% @hs_clinics.each do |clinic| %>
+					<li>
+						<h4><%= clinic.name%></h4>
+						<p><b>Dirección</b><%= clinic.address + ' - ' + clinic.township.downcase.camelize%></p>
+						<p><b>Teléfono:</b><%= clinic.phone %></p>
+						<% if clinic.hs_doctors.any? %>
+							<p><b>Profesionales</b>						
+							</p>
+							<ul class="list-doctors">
+								<% clinic.hs_doctors.each do |doctor| %>			
+									<li>Dr(a). <%= doctor.names.camelize + ' ' + doctor.last_names.camelize + ' - ' + doctor.specialty.camelize%></li>
+								<% end %>
+							</ul>	
+						<% end %>
+					</li>
+	        	<% end %>
+	        </ul>
+	        <%= will_paginate @hs_clinics %>
+    	 </div>
+    </div>
+</section>

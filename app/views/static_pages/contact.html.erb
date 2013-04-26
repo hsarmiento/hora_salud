@@ -1,40 +1,40 @@
-<div class="body-home">
-	<div class="container">
-		<div class="hero-unit effect-opacity" id="contact-div">
-			<h2>Eres doctor? Quieres que tu consulta aparezca en Hora Salud?</h2>
-			<h3>Contáctanos!</h3>
-			<br/>
-			<%= form_tag({controller: 'static_pages', action: 'enviar'}, class:"form-horizontal") do%>
-				<div class="control-group">
-					<%= label_tag :nombre, "Nombre de contacto", class: "control-label"%>
-					<div class="controls">
-						<%= text_field_tag :nombre%>
-					</div>				
-				</div>
-				<div class="control-group">
-					<%= label_tag :email, "Email", class: "control-label"%>
-					<div class="controls">
-						<%= text_field_tag :email%>
-					</div>				
-				</div>
-				<div class="control-group">
-					<%= label_tag :telefono, "Teléfono", class: "control-label"%>
-					<div class="controls">
-						<%= text_field_tag :telefono%>
-					</div>				
-				</div>
-				<div class="control-group">
-					<%= label_tag :comentario, "Comentario", class: "control-label"%>
-					<div class="controls">
-						<%= text_area_tag :comentario,"",size: "5x3"%>
-					</div>				
-				</div>
-				<div class="control-group">
-					<%= submit_tag "Enviar", class: "btn"%>
-				</div>
-				
-			<% end %>
-			<% #link_to "enviar", enviar_path%>
-		</div>
+<% provide(:title, 'Contacto') %>
+<section class="one-color">
+	<div class="container hero-unit form-container">
+		<figcaption>
+	    	<h2>TEXTO TEXTO PARA QUEDAR COMO REY CON LAS TERRIBLES GEMAS</h2>
+		</figcaption>
+		<h2>Eres doctor? Quieres que tu consulta aparezca en Hora Salud?</h2>
+		<h3>Contáctanos!</h3>
+		<br/>
+		<%= form_tag({controller: 'static_pages', action: 'enviar'}, class:"form-horizontal") do%>
+			<div class="control-group">
+				<%= label_tag :nombre, "Nombre de contacto", class: "control-label"%>
+				<div class="controls">
+					<%= text_field_tag :nombre%>
+				</div>				
+			</div>
+			<div class="control-group">
+				<%= label_tag :email, "Email", class: "control-label"%>
+				<div class="controls">
+					<%= text_field_tag :email%>
+				</div>				
+			</div>
+			<div class="control-group">
+				<%= label_tag :telefono, "Teléfono", class: "control-label"%>
+				<div class="controls">
+					<%= text_field_tag :telefono%>
+				</div>				
+			</div>
+			<div class="control-group">
+				<%= label_tag :comentario, "Comentario", class: "control-label"%>
+				<div class="controls">
+					<%= text_area_tag :comentario,"",size: "5x3"%>
+				</div>				
+			</div>
+			<%= submit_tag "Enviar", class: "btn btn-primary btn-large center"%>
+			
+		<% end %>
+		<% #link_to "enviar", enviar_path%>
 	</div>
-</div>
+</section>

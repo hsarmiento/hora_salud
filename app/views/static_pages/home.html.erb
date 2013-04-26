@@ -1,3 +1,4 @@
+<% provide(:title, 'Home') %>
 <section>
     <article>
         <figure>
@@ -22,7 +23,7 @@
 						<% end %>
 					</select>
 					<input type="hidden" id="hidden_township" name="township" value="">
-					<a href="#add_township" id="add_township">agregar comuna?</a>
+					<a href="#" id="add_township">agregar comuna?</a>
 					<select name="township" id="township" disabled style="display:none">		
 						<% @townships.each do |township| %>	
 							<option value="<%=township.name%>" class="<%=township.hs_state_id%>"><%=township.name.downcase.camelize%></option>
