@@ -1,4 +1,5 @@
 <% provide(:title, 'Perfil') %>
+<% set_meta_tags noindex: true, nofollow: true%>
 <section class="section-admin">
 	<h2> <%= @hs_account.email %> </h2>
 	<% if @hs_account.account_type == 0 %>

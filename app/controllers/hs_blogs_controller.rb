@@ -4,10 +4,16 @@ class HsBlogsController < ApplicationController
 
 	def index
 		@entries = HsBlog.order("created_at desc")
+		@page_description = 'Hora Salud, encuentra el doctor que necesitas. Enterate de
+		las principales noticias de salud en nuestro blog'
+		@page_keywords = 'hora, salud, blog, noticias, medico, doctor, consulta'
 	end
 
 	def show
 		@entry = HsBlog.find(params[:id])
+		@page_description = 'Hora Salud, encuentra el doctor que necesitas. Enterate de
+		las principales noticias de salud en nuestro blog'
+		@page_keywords = 'hora, salud, blog, noticias, medico, doctor, consulta, '+@entry.title
 	end
 
 	def new
