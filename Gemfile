@@ -37,6 +37,8 @@ gem 'carrierwave'
 gem 'rails-i18n'
 #gema para formularios con nested attributes
 gem 'nested_form'
+#gema para SEO
+gem 'meta-tags', :require => 'meta_tags'
 
 #gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git'
 

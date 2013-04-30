@@ -3,10 +3,14 @@ class StaticPagesController < ApplicationController
 		@states = HsState.all
 		@townships = HsTownship.all
 		@specialties = HsSpecialty.find(:all, order: "name asc")
+		@page_description = 'Hora Salud, encuentra el doctor que necesitas'
+		@page_keywords = 'hora salud, doctor, buscar, encontrar, consulta, medico'
+
 	end
 
 	def contact
-		
+		@page_description = 'Hola Salud, encuentra el doctor que necesitas. Contactanos!'
+		@page_keywords = 'hora salud, doctor, buscar, encontrar, consulta, medico, contacto'
 	end
 
 	def enviar

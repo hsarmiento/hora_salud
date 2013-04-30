@@ -10,6 +10,10 @@ class HsDoctorsController < ApplicationController
 		@township_tag = params[:township]
 		@state_tag = params[:state]
 		@specialty = params[:specialty]
+		@page_keywords = @specialty+',hora, salud, doctor, encontrar, buscar, consulta'
+		if @township_tag != ''
+			@page_keywords = @page_keywords+','+@township_tag
+		end
 		respond_to do |format|
     		format.html { render html: @doctors }
     	end
