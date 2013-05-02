@@ -70,6 +70,7 @@ GEM
     mime-types (1.22)
     multi_json (1.7.2)
     nested_form (0.3.2)
+    newrelic_rpm (3.6.1.87)
     pg (0.15.0)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -141,6 +142,7 @@ DEPENDENCIES
   jquery-rails
   meta-tags
   nested_form
+  newrelic_rpm
   pg
   rails (= 3.2.9)
   rails-i18n
