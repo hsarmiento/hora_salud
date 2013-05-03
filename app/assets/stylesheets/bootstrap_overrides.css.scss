@@ -62,9 +62,9 @@ nav{
     background: linear-gradient(to bottom,  #606c88 0%,#3f4c6b 100%); 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 );
     figure{
-        padding: 0 20px;
+        padding: 0 0 0 20px;
         text-align: left;
-        width: 200px;
+        width: 140px;
         margin: 6px 0 0 0;
         float: left;
         img{
@@ -85,6 +85,15 @@ nav{
             text-decoration: none !important;
             color: #FFF !important;
         }
+    }
+    .slogan{
+        padding: 5px 0 0 0;
+        text-align: left;
+        margin: 6px 0 0 -5px;
+        float: left;
+        color: #EEE;
+        font-weight: bold;
+        font-size: 15px;
     }
 }
 
