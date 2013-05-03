@@ -2,7 +2,7 @@ class HsSessionsController < ApplicationController
 
 	def new
 	end
-
+	
 	def create
 		hs_account = HsAccount.find_by_email(params[:hs_sessions][:email].downcase)
 		if hs_account && hs_account.authenticate(params[:hs_sessions][:password])
@@ -15,7 +15,7 @@ class HsSessionsController < ApplicationController
 	end
 
 	def destroy
-		sign_out
+		sign_out		
 		redirect_to root_url
 	end
 end
