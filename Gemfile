@@ -49,7 +49,8 @@ gem 'meta-tags', :require => 'meta_tags'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+gem 'newrelic_rpm'
 
 # Deploy with Capistrano
 # gem 'capistrano'
