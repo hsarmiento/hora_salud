@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
 	def home
-		@states = HsState.all
+		@states = HsState.find([7]) #solo RM
+		# @states = HsState.all  considera todas las regiones
 		@townships = HsTownship.all
 		@specialties = HsSpecialty.find(:all, order: "name asc")
 		@page_description = 'Hora Salud, encuentra el doctor que necesitas'
