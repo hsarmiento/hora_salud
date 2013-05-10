@@ -31,7 +31,7 @@ class HsClinic < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   #validaciones
-  validates :name, presence: true, length: { minimum: 7}
+  #validates :name, presence: true, length: { minimum: 7}
   validates :address, presence: true
   validates :country, presence: true
   validates :hs_state_id, presence: true
