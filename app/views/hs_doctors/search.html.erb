@@ -14,7 +14,7 @@
 									<b>Consulta Privada</b>
 								<% end %>	
 	                		</h4>
-		                    <p><b>Profesional:</b>Dr. <%= doctor.names.camelize %><%= ' '+doctor.last_names.camelize%></p>
+		                    <p><b>Profesional:</b>Dr(a). <%= doctor.names.camelize %><%= ' '+doctor.last_names.camelize%></p>
 		                   	<p><b>Especialidad:</b> <%= doctor.specialty.camelize %></p>
 		                    <p><b>Dirección:</b><%= doctor.hs_clinic.address %> - <%= doctor.hs_clinic.township.downcase.camelize%></p>
 		                    <% if doctor.hs_clinic.phone[0] == "2" 
@@ -24,11 +24,8 @@
 									h_phone = "9"+doctor.hs_clinic.phone
 									phone  = doctor.hs_clinic.phone[0]+'-'+doctor.hs_clinic.phone[1..-1]
 							   end
-		                    	%>
-
-		                    <p><b>Teléfono:</b><a href="tel:+56<%=h_phone%>"><%=phone%></a>
-
-		                    	</p>
+	                    	%>
+		                    <p><b>Teléfono:</b><a href="tel:+56<%=h_phone%>"><%=phone%></a></p>
 		                </li>
 	                <% end %>
 	                <!-- <li class="clearFull">&nbsp;</li> -->
