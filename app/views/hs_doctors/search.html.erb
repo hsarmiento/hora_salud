@@ -1,4 +1,4 @@
-<section>
+<section class="bg_search">
     <div class="result">
         <div class="box">
             <h3>Resultados de búsqueda de <%=@specialty%> para: </h3>
@@ -6,13 +6,29 @@
             <% if @doctors.any? %>
 	            <ul>
 	            	<% @doctors.each do |doctor| %>
-		                <li>
-		                	<h4><b><%=doctor.hs_clinic.name%></b></h4>
+		                <li>        	
+		                	<h4>
+								<% if doctor.hs_clinic.name != ' ' %>
+									<b><%=doctor.hs_clinic.name%></b>			
+								<% else %>
+									<b>Consulta Privada</b>
+								<% end %>	
+	                		</h4>
 		                    <p><b>Profesional:</b>Dr. <%= doctor.names.camelize %><%= ' '+doctor.last_names.camelize%></p>
 		                   	<p><b>Especialidad:</b> <%= doctor.specialty.camelize %></p>
 		                    <p><b>Dirección:</b><%= doctor.hs_clinic.address %> - <%= doctor.hs_clinic.township.downcase.camelize%></p>
-		                    <p><b>Teléfono:</b><%= doctor.hs_clinic.phone %></p>
+		                    <% if doctor.hs_clinic.phone[0] == "2" 
+									h_phone = "2"+doctor.hs_clinic.phone
+									phone = doctor.hs_clinic.phone
+							   else
+									h_phone = "9"+doctor.hs_clinic.phone
+									phone  = doctor.hs_clinic.phone[0]+'-'+doctor.hs_clinic.phone[1..-1]
+							   end
+		                    	%>
 
+		                    <p><b>Teléfono:</b><a href="tel:+56<%=h_phone%>"><%=phone%></a>
+
+		                    	</p>
 		                </li>
 	                <% end %>
 	                <!-- <li class="clearFull">&nbsp;</li> -->
