@@ -1,6 +1,6 @@
-<% provide(:title, 'Clínicas en Santiago') %>
+<% provide(:title, 'Consultas médicas en Santiago') %>
 
-<section>
+<section class="bg_search">
     <div class="result">
         <div class="box">
         	<h3>Consultas médicas en Santiago</h3>
@@ -8,9 +8,23 @@
         	<ul>
 	        	<% @hs_clinics.each do |clinic| %>
 					<li>
-						<h4><%= clinic.name%></h4>
+						<h4>
+							<% if clinic.name != ' ' %>
+									<b><%=clinic.name%></b>			
+								<% else %>
+									<b>Consulta Privada</b>
+								<% end %>
+						</h4>
 						<p><b>Dirección</b><%= clinic.address + ' - ' + clinic.township.downcase.camelize%></p>
-						<p><b>Teléfono:</b><%= clinic.phone %></p>
+						<% if clinic.phone[0] == "2" 
+									h_phone = "2"+clinic.phone
+									phone = clinic.phone
+							   else
+									h_phone = "9"+clinic.phone
+									phone  = clinic.phone[0]+'-'+clinic.phone[1..-1]
+							   end
+                    	%>
+						<p><b>Teléfono:</b><a href="tel:+56<%=h_phone%>"><%=phone%></a></p>
 						<% if clinic.hs_doctors.any? %>
 							<p><b>Profesionales</b>						
 							</p>

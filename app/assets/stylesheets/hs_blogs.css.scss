@@ -40,7 +40,12 @@
 	.ver-mas{
 		text-align: right;
 	}
+  .entry-text{
+    text-align: justify;
+  }
 }
+
+
 #fb-div{
 	margin-bottom: 70px;
 }
@@ -49,6 +54,7 @@
   textarea{
     width: 300px;
     height: 120px;
+    white-space: normal;
   }
 }
 

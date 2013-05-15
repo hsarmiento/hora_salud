@@ -16,7 +16,7 @@
 						</div>
 					<% end %>
 					<div class="span8 offset2">
-						<%= entry.abstract%>
+						<%= simple_format(entry.abstract)%>
 					</div>
 					<div class="span2 offset8 ver-mas">
 						<%= link_to "Seguir leyendo", blog_path(entry)%>

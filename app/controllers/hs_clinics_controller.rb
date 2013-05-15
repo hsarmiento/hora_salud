@@ -8,7 +8,7 @@ class HsClinicsController < ApplicationController
 	end
 
 	def clinics_stgo
-		@hs_clinics = HsClinic.paginate(page: params[:page], per_page: 2).where("hs_state_id = 7")
+		@hs_clinics = HsClinic.paginate(page: params[:page], per_page: 10).where("hs_state_id = 7")
 		@page_description = 'Hora Salud, encuentra el doctor que necesitas. Busca las principales
 		consultas en Santiago'
 		@page_keywords = 'hora, salud, agregar, clinica, medico, doctor, consulta, santiago'
